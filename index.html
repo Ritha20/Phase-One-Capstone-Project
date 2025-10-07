@@ -7,44 +7,45 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-       .category-dropdown{
-        position: relative;
-       }
-       .category-menu{
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: white;
-        border: 1px solid #e5e7eb;
-        border-radius: 0.5rem;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        min-width: 200px;
-      z-index: 50;
-      margin-top: 0.5rem;
-    }
-    .category-dropdown:hover .category-menu {
-      display: block;
-    }
-    .category-item {
-      padding: 0.75rem 1rem;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-    .category-item:hover {
-      background-color: #f3f4f6;
-    }
-    .category-item.active {
-      background-color: #dbeafe;
-      color: #1e40af;  
-    }  
-    .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-    </style>
+      .category-dropdown{
+       position: relative;
+      }
+      .category-menu{
+       display: none;
+       position: absolute;
+       top: 100%;
+       left: 0;
+       background: white;
+       border: 1px solid #e5e7eb;
+       border-radius: 0.5rem;
+       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+       min-width: 200px;
+       z-index: 50;
+       margin-top: 0.5rem;
+      }
+      .category-dropdown:hover .category-menu,
+      .category-menu:hover {
+       display: block;
+      }
+      .category-item {
+       padding: 0.75rem 1rem;
+       cursor: pointer;
+       transition: background-color 0.2s;
+      }
+      .category-item:hover {
+       background-color: #f3f4f6;
+      }
+      .category-item.active {
+       background-color: #dbeafe;
+       color: #1e40af;  
+      }  
+      .line-clamp-2 {
+       display: -webkit-box;
+       -webkit-line-clamp: 2;
+       -webkit-box-orient: vertical;
+       overflow: hidden;
+      }
+   </style>
 </head>
 <body class="border-l-orange-200">
   <!-- Navigation -->
@@ -54,7 +55,7 @@
         <h1 class="text-2xl font-bold font-serif">Book Explorer</h1>
         <div class="flex gap-4">
           <a href="index.html" class="px-4 py-2 text-stone-700 rounded-lg hover:bg-gray-100 transition">Home</a>
-          <a href="./favorites.html" class="px-4 py-2 text-stone-700 hover:bg-gray-100 rounded-lg transition">Favorites</a>
+          <a href="favorites.html" class="px-4 py-2 text-stone-700 hover:bg-gray-100 rounded-lg transition">Favorites</a>
           <a href="about.html" class="px-4 py-2 text-stone-700 hover:bg-gray-100 rounded-lg transition">About</a>  
         </div>
       </div>
@@ -121,179 +122,14 @@
 
 <!-- Loading -->
 <div id="loadingSpinner" class="hidden text-center py-12">
-  <div class="inline-block animate spin rounded-full h-12 w-12 border-b-2 border-rose-200"></div>
+  <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
   <p class="mt-4 text-gray-600 italic">Loading books....</p>
 </div>
 
 <!-- Books Grid -->
 <section class="container mx-auto px-4 py-8">
   <div id="booksGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    <!-- Book Card 1 -->
-    <div class="book-card bg-white rounded-lg shadow-md overflow-hidden">
-      <div class="book-image-placeholder h-48">
-        <!-- Image will be inserted here -->
-        <img src="./images/image 1.avif" alt="The Silent Echo book cover" class="w-full h-full object-cover">
-        <div class="text-center">
-        </div>
-      </div>
-      <div class="p-4">
-        <h3 class="font-bold text-lg mb-1">This Could be Us </h3>
-        <p class="text-gray-600 text-sm mb-2">Emily Henry</p>
-        <p class="text-gray-700 text-sm mb-4">A Romance story that will keep you guessing until the very last page.</p>
-        <div class="flex gap-2">
-        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm font-medium">Start Reading</button>
-        <button class="favorite-btn bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-md transition" data-id="book1">
-          <i class="far fa-heart"></i>
-        </button>
-      </div>
-      </div>
-    </div>
-    
-    <!-- Book Card 2 -->
-    <div class="book-card bg-white rounded-lg shadow-md overflow-hidden">
-      <div class="book-image-placeholder h-48">
-        <!-- Image will be inserted here -->
-        <img src="./images/image 2.jpeg" alt="Beyond the Horizon book cover" class="w-full h-full object-cover">
-        <div class="text-center">
-        </div>
-      </div>
-      <div class="p-4">
-        <h3 class="font-bold text-lg mb-1">The Year of Watching</h3>
-        <p class="text-gray-600 text-sm mb-2">Alexis Handerson</p>
-        <p class="text-gray-700 text-sm mb-4">An epic adventure across uncharted lands and mysterious realms.</p>
-        <div class="flex gap-2">
-        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm font-medium">Start Reading</button>
-        <button class="favorite-btn bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-md transition" data-id="book2">
-          <i class="far fa-heart"></i>
-        </button>
-      </div>
-    </div>
-    </div>
-    
-    <!-- Book Card 3 -->
-    <div class="book-card bg-white rounded-lg shadow-md overflow-hidden">
-      <div class="book-image-placeholder h-48">
-        <!-- Image will be inserted here -->
-        <img src="./images/image 3.webp" alt="Echoes of Yesterday book cover" class="w-full h-full object-cover">
-        <div class="text-center">
-        </div>
-      </div>
-      <div class="p-4">
-        <h3 class="font-bold text-lg mb-1">Whispering Key</h3>
-        <p class="text-gray-600 text-sm mb-2">A.J Hawthorne</p>
-        <p class="text-gray-700 text-sm mb-4">A mystery novel where they are looking an answer using the key</p>
-        <div class="flex gap-2">
-        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm font-medium">Start Reading</button>
-        <button class="favorite-btn bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-md transition" data-id="book3">
-          <i class="far fa-heart"></i>
-        </button>
-      </div>
-    </div>
-    </div>
-    
-    <!-- Book Card 4 -->
-    <div class="book-card bg-white rounded-lg shadow-md overflow-hidden">
-      <div class="book-image-placeholder h-48">
-        <!-- Image will be inserted here -->
-        <img src="./images/image 4..webp" alt="The Last Ember book cover" class="w-full h-full object-cover">
-        <div class="text-center">
-        </div>
-      </div>
-      <div class="p-4">
-        <h3 class="font-bold text-lg mb-1">The Vines</h3>
-        <p class="text-gray-600 text-sm mb-2">Shelley Nolden</p>
-        <p class="text-gray-700 text-sm mb-4">A dystopian novel about survival in a post-apocalyptic world.</p>
-        <div class="flex gap-2">
-        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm font-medium">Start Reading</button>
-        <button class="favorite-btn bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-md transition" data-id="book4">
-          <i class="far fa-heart"></i>
-        </button>
-      </div>
-    </div>
-    </div>
-    
-    <!-- Book Card 5 -->
-    <div class="book-card bg-white rounded-lg shadow-md overflow-hidden">
-      <div class="book-image-placeholder h-48">
-        <!-- Image will be inserted here -->
-        <img src="./images/image 5.jpeg" alt="Ocean's Whisper book cover" class="w-full h-full object-cover">
-        <div class="text-center">
-        </div>
-      </div>
-      <div class="p-4">
-        <h3 class="font-bold text-lg mb-1">The Great of Science</h3>
-        <p class="text-gray-600 text-sm mb-2">AlbertEeinsten</p>
-        <p class="text-gray-700 text-sm mb-4">A story of science and practising the usage of chemicals.</p>
-        <div class="flex gap-2">
-        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm font-medium">Start Reading</button>
-        <button class="favorite-btn bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-md transition" data-id="book5">
-          <i class="far fa-heart"></i>
-        </button>
-      </div>
-    </div>
-    </div>
-    
-    <!-- Book Card 6 -->
-    <div class="book-card bg-white rounded-lg shadow-md overflow-hidden">
-      <div class="book-image-placeholder h-48">
-        <!-- Image will be inserted here -->
-        <img src="./images/image 6.jpeg" alt="The Quantum Code book cover" class="w-full h-full object-cover">
-        <div class="text-center">
-        </div>
-      </div>
-      <div class="p-4">
-        <h3 class="font-bold text-lg mb-1">LegendBorn</h3>
-        <p class="text-gray-600 text-sm mb-2">Tracy Deon</p>
-        <p class="text-gray-700 text-sm mb-4">A love story of girl who lost in the bush and found by a Prince.</p>
-        <div class="flex gap-2">
-        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm font-medium">Start Reading</button>
-        <button class="favorite-btn bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-md transition" data-id="book6">
-          <i class="far fa-heart"></i>
-        </button>
-      </div>
-    </div>
-    </div>
-    
-    <!-- Book Card 7 -->
-    <div class="book-card bg-white rounded-lg shadow-md overflow-hidden">
-      <div class="book-image-placeholder h-48">
-        <!-- Image will be inserted here -->
-        <img src="./images/image7.jpg" alt="Desert Dreams book cover" class="w-full h-full object-cover">
-        <div class="text-center">
-        </div>
-      </div>
-      <div class="p-4">
-        <h3 class="font-bold text-lg mb-1">Amari and The Night Brothers</h3>
-        <p class="text-gray-600 text-sm mb-2">B.B. Aliston</p>
-        <p class="text-gray-700 text-sm mb-4">A captivating tale of a girl loved by Brothers.</p>
-        <div class="flex gap-2">
-        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm font-medium">Start Reading</button>
-        <button class="favorite-btn bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-md transition" data-id="book7">
-          <i class="far fa-heart"></i>
-      </div>
-    </div>
-    </div>
-    
-    <!-- Book Card 8 -->
-    <div class="book-card bg-white rounded-lg shadow-md overflow-hidden">
-      <div class="book-image-placeholder h-48">
-        <!-- Image will be inserted here -->
-        <img src="./images/image 8.jpg" alt="Winter's Promise book cover" class="w-full h-full object-cover">
-        <div class="text-center">
-        </div>
-      </div>
-      <div class="p-4">
-        <h3 class="font-bold text-lg mb-1">Study Drowning</h3>
-        <p class="text-gray-600 text-sm mb-2">AVA Reid</p>
-        <p class="text-gray-700 text-sm mb-4">A romantic story of love and resilience in a mountain town.</p>
-        <div class="flex gap-2">
-        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm font-medium">start Reading</button>
-        <button class="favorite-btn bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-md transition" data-id="book8">
-          <i class="far fa-heart"></i>
-        </button>
-      </div>
-    </div>
-    </div>
+    <!-- Books will be dynamically inserted here by JavaScript -->
   </div>
   <div id="noResults" class="hidden text-center py-12">
     <p class="text-gray-600 text-xl">No books found. Try a different search term.</p>
@@ -312,7 +148,7 @@
           <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
           <ul class="space-y-2">
             <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
-            <li><a href="/lab2/favorites.html" class="text-gray-400 hover:text-white transition">Favorites</a></li>
+            <li><a href="favorites.html" class="text-gray-400 hover:text-white transition">Favorites</a></li>
             <li><a href="about.html" class="text-gray-400 hover:text-white transition">About</a></li>
           </ul>
         </div>
@@ -328,6 +164,6 @@
     </div>
   </footer>
 
-<script src="/js/main.js"></script>
+<script type="module" src="/js/main.js"></script>
 </body>
 </html>
