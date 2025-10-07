@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Explorer - About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <h1 class="text-2xl font-bold text-blue-600">Book Explorer</h1>
+          <div class="flex gap-4">
+            <a href="index.html" class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition">Home</a>
+            <a href="/lab2/favorites.html" class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition">Favorites</a>
+            <a href="about.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">About</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+    <!-- About Section -->
+    <section class="container mx-auto px-4 py-16">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-gray-800">About Book Explorer</h2>
+        
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-blue-600">Our Mission</h3>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Book Explorer is dedicated to helping readers discover their next great read. We provide a simple, 
+            intuitive platform to search through thousands of books, save your favorites, and build your personal 
+            reading list.
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            Whether you're looking for fiction, science, history, fantasy, or mystery, our comprehensive database 
+            powered by the Open Library API ensures you'll find exactly what you're looking for.
+          </p>
+        </div>
+  
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+          <h3 class="text-2xl font-semibold mb-4 text-blue-600">Features</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Search through thousands of books by title, author, or subject</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Filter books by category (Fiction, Science, History, Fantasy, Mystery)</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Save your favorite books for easy access later</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Responsive design that works on all devices</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Your favorites persist across sessions using local storage</span>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="bg-white rounded-lg shadow-md p-8">
+          <h3 class="text-2xl font-semibold mb-4 text-blue-600">Technology</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Book Explorer is built with modern web technologies:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>HTML5 for semantic structure</li>
+            <li>Tailwind CSS for responsive, utility-first styling</li>
+            <li>Vanilla JavaScript with ES6 modules for clean, maintainable code</li>
+            <li>Open Library API for comprehensive book data</li>
+            <li>LocalStorage for client-side data persistence</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Book Explorer</h3>
+            <p class="text-gray-400">Discover and explore thousands of books from around the world.</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+              <li><a href="/lab2/favorites.html" class="text-gray-400 hover:text-white transition">Favorites</a></li>
+              <li><a href="about.html" class="text-gray-400 hover:text-white transition">About</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Contact</h4>
+            <p class="text-gray-400">Email: irakozritha@gmail.com</p>
+            <p class="text-gray-400">Phone: +250 782412000</p>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+          <p>&copy; 2025 Book Explorer. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
