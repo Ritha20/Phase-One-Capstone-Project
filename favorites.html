@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Explorer - Favorites</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl font-bold text-blue-600">Book Explorer</h1>
+                <div class="flex gap-4">
+                    <a href="index.html" class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition">Home</a>
+                    <a href="favorites.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Favorites</a>
+                    <a href="about.html" class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Favorites Section -->
+    <section class="container mx-auto px-4 py-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">Your Favorite Books</h2>
+            <p class="text-gray-600 text-lg">All your saved books in one place</p>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-16">
+            <div class="max-w-md mx-auto">
+                <i class="far fa-heart text-gray-300 text-6xl mb-4"></i>
+                <h3 class="text-2xl font-semibold text-gray-600 mb-2">No favorites yet</h3>
+                <p class="text-gray-500 mb-6">Start adding books to your favorites by clicking the heart icon!</p>
+                <a href="index.html" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold">
+                    Explore Books
+                </a>
+            </div>
+        </div>
+
+        <!-- Favorites Grid -->
+        <div id="favoritesGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Favorite books will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Book Explorer</h3>
+                    <p class="text-gray-400">Discover and explore thousands of books from around the world.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="favorites.html" class="text-gray-400 hover:text-white transition">Favorites</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <p class="text-gray-400">Email: irakozritha@gmail.com</p>
+                    <p class="text-gray-400">Phone: +250 782412000</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Book Explorer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="favorites.js"></script>
+</body>
+</html>
