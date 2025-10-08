@@ -62,13 +62,13 @@ function displayFavorites() {
 
 function createFavoriteBookCard(book) {
     const card = document.createElement('div');
-    card.className = 'book-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300';
+    card.className = 'book-card bg-purple-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300';
     
     const imageUrl = book.image || '../images/placeholder-book.jpg';
     const readUrl = book.readUrl || 'https://openlibrary.org';
     
     card.innerHTML = `
-        <div class="book-image-placeholder h-48 bg-gray-200">
+        <div class="book-image-placeholder h-48 bg-purple-100">
             <img src="${imageUrl}" alt="${book.title} book cover" 
                  class="w-full h-full object-cover"
                  onerror="this.src='../images/placeholder-book.jpg'">
@@ -78,14 +78,14 @@ function createFavoriteBookCard(book) {
             <p class="text-gray-600 text-sm mb-2">${book.author}</p>
             <p class="text-gray-700 text-sm mb-4 line-clamp-2">${book.description}</p>
             <div class="flex items-center justify-between text-xs text-gray-500 mb-3">
-                ${book.category ? `<span class="category-tag bg-blue-100 text-blue-800 px-2 py-1 rounded capitalize">${book.category}</span>` : '<span></span>'}
+                ${book.category ? `<span class="category-tag bg-purple-100 text-purple-800 px-2 py-1 rounded capitalize">${book.category}</span>` : '<span></span>'}
                 <span></span>
             </div>
             <div class="flex gap-2">
-                <a href="${readUrl}" target="_blank" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm font-medium transition-colors text-center">
+                <a href="${readUrl}" target="_blank" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md text-sm font-medium transition-colors text-center">
                     Start Reading
                 </a>
-                <button class="remove-favorite-btn bg-red-100 hover:bg-red-200 text-red-600 p-2 rounded-md transition border border-red-300" data-id="${book.id}">
+                <button class="remove-favorite-btn bg-purple-100 hover:bg-purple-200 text-purple-600 p-2 rounded-md transition border border-purple-300" data-id="${book.id}">
                     <i class="fas fa-heart"></i>
                 </button>
             </div>

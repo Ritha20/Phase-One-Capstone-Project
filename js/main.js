@@ -52,12 +52,12 @@ function updateFavoriteButtons() {
         const heartIcon = btn.querySelector('i');
         
         if (favorites.includes(bookId)) {
-            heartIcon.className = 'fas fa-heart text-red-500';
-            btn.classList.add('bg-red-100', 'border', 'border-red-300');
+            heartIcon.className = 'fas fa-heart text-purple-500';
+            btn.classList.add('bg-purple-100', 'border', 'border-purple-300');
             btn.classList.remove('bg-gray-100');
         } else {
             heartIcon.className = 'far fa-heart';
-            btn.classList.remove('bg-red-100', 'border', 'border-red-300');
+            btn.classList.remove('bg-purple-100', 'border', 'border-purple-300');
             btn.classList.add('bg-gray-100');
         }
     });
@@ -181,12 +181,12 @@ function displayBooks(books) {
 
 function createBookCard(book) {
     const card = document.createElement('div');
-    card.className = 'book-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300';
+    card.className = 'book-card bg-purple-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300';
     
     const imageUrl = book.image || '../images/placeholder-book.jpg';
     
     card.innerHTML = `
-        <div class="book-image-placeholder h-48 bg-gray-200">
+        <div class="book-image-placeholder h-48 bg-purple-100">
             <img src="${imageUrl}" alt="${book.title} book cover" 
                  class="w-full h-full object-cover" 
                  onerror="this.src='../images/placeholder-book.jpg'">
@@ -196,11 +196,11 @@ function createBookCard(book) {
             <p class="text-gray-600 text-sm mb-2">${book.author}</p>
             <p class="text-gray-700 text-sm mb-4 line-clamp-2">${book.description}</p>
             <div class="flex items-center justify-between text-xs text-gray-500 mb-3">
-                ${book.category ? `<span class="category-tag bg-blue-100 text-blue-800 px-2 py-1 rounded capitalize">${book.category}</span>` : '<span></span>'}
+                ${book.category ? `<span class="category-tag bg-purple-100 text-purple-800 px-2 py-1 rounded capitalize">${book.category}</span>` : '<span></span>'}
                 ${book.published ? `<span>${book.published}</span>` : '<span></span>'}
             </div>
             <div class="flex gap-2">
-                <a href="${book.readUrl}" target="_blank" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm font-medium transition-colors text-center">
+                <a href="${book.readUrl}" target="_blank" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md text-sm font-medium transition-colors text-center">
                     Start Reading
                 </a>
                 <button class="favorite-btn bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-md transition" data-id="${book.id}">
@@ -246,11 +246,11 @@ function showNoResults() {
 function showError(message) {
     booksGrid.innerHTML = `
         <div class="col-span-full text-center py-12">
-            <div class="text-red-500 text-lg mb-2">
+            <div class="text-purple-300 text-lg mb-2">
                 <i class="fas fa-exclamation-triangle"></i>
             </div>
             <p class="text-gray-600">${message}</p>
-            <button onclick="window.location.reload()" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+            <button onclick="window.location.reload()" class="mt-4 px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700">
                 Reload Page
             </button>
         </div>

@@ -37,7 +37,7 @@
       }
       .category-item.active {
        background-color: #dbeafe;
-       color: #1e40af;  
+       color: #A5B4FC;  
       }  
       .line-clamp-2 {
        display: -webkit-box;
@@ -47,25 +47,25 @@
       }
    </style>
 </head>
-<body class="border-l-orange-200">
+<body class="bg-purple-100">
   <!-- Navigation -->
-  <nav class="bg-rose-100 shadow-md">
+  <nav class="bg-purple-300 shadow-md">
     <div class="container mx-auto px-4 py-4">
       <div class="flex items-center justify-between">
         <h1 class="text-2xl font-bold font-serif">Book Explorer</h1>
         <div class="flex gap-4">
-          <a href="index.html" class="px-4 py-2 text-stone-700 rounded-lg hover:bg-gray-100 transition">Home</a>
-          <a href="favorites.html" class="px-4 py-2 text-stone-700 hover:bg-gray-100 rounded-lg transition">Favorites</a>
-          <a href="about.html" class="px-4 py-2 text-stone-700 hover:bg-gray-100 rounded-lg transition">About</a>  
+          <a href="index.html" class="px-4 py-2 text-violet-900 rounded-lg hover:bg-purple-500 hover:text-white transition">Home</a>
+          <a href="favorites.html" class="px-4 py-2 text-violet-900 hover:bg-purple-500 hover:text-white rounded-lg transition">Favorites</a>
+          <a href="about.html" class="px-4 py-2 text-violet-900 hover:bg-purple-500 hover:text-white rounded-lg transition">About</a>  
         </div>
       </div>
     </div>
 </nav>
 
 <!-- Hero Section -->
-<section class="bg-stone-400 text-white py-16">
+<section class="bg-slate-900 text-white py-16">
   <div class="container mx-auto px-4 text-center">
-    <h2 class="text-2xl font-mono italic mb-4">Find Stories That Stay With You</h2>
+    <h2 class="text-2xl text-purple-100 font-mono italic mb-4">Find Stories That Stay With You</h2>
     <p class="text-l mb-8 font-mono">Dive into a world of stories that inspire, educate, and entertain. Explore new 
       releases, timeless classics, and hidden gems — all in one place.</p>
 
@@ -80,19 +80,19 @@
         type="text" 
         id="searchInput" 
         placeholder="Search for books..." 
-        class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300"
       >
       <button 
         id="searchBtn" 
-        class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold"
+        class="px-6 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-700 transition font-semibold"
       >
         Search
       </button>
     </div>
 
     <!-- category-dropdown -->
-    <div class="flex items-center gap-4">
-      <span class="text-gray-700 font-medium">Filter by:</span>
+    <div class="flex text-purple-300 items-center gap-4">
+      <span class="text-purple-500 font-medium">Filter by:</span>
       <div class="category-dropdown">
         <button class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition flex items-center gap-2">
           <span id="selectedCategory">All Categories</span>
@@ -104,7 +104,7 @@
           <div class="category-item active" data-category="">
             <div class="flex items-center justify-between">
               <span>All Categories</span>
-              <svg class="w-5 h-5 text-blue-600 check-icon" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-purple-600 check-icon" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
             </div>
@@ -122,7 +122,7 @@
 
 <!-- Loading -->
 <div id="loadingSpinner" class="hidden text-center py-12">
-  <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+  <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600"></div>
   <p class="mt-4 text-gray-600 italic">Loading books....</p>
 </div>
 
@@ -137,7 +137,7 @@
 </section>
 
 <!-- Footer -->
-<footer class="bg-gray-800 text-white mt-16">
+<footer class="bg-indigo-950 text-purple-100 mt-16">
     <div class="container mx-auto px-4 py-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
