@@ -62,13 +62,13 @@ function displayFavorites() {
 
 function createFavoriteBookCard(book) {
     const card = document.createElement('div');
-    card.className = 'book-card bg-purple-300 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300';
+    card.className = 'book-card bg-purple-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300';
     
     const imageUrl = book.image || '../images/placeholder-book.jpg';
     const readUrl = book.readUrl || 'https://openlibrary.org';
     
     card.innerHTML = `
-        <div class="book-image-placeholder h-48 bg-purple-300">
+        <div class="book-image-placeholder h-48 bg-purple-100">
             <img src="${imageUrl}" alt="${book.title} book cover" 
                  class="w-full h-full object-cover"
                  onerror="this.src='../images/placeholder-book.jpg'">

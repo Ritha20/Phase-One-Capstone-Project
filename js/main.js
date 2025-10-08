@@ -52,12 +52,12 @@ function updateFavoriteButtons() {
         const heartIcon = btn.querySelector('i');
         
         if (favorites.includes(bookId)) {
-            heartIcon.className = 'fas fa-heart text-red-500';
-            btn.classList.add('bg-red-100', 'border', 'border-red-300');
+            heartIcon.className = 'fas fa-heart text-purple-500';
+            btn.classList.add('bg-purple-100', 'border', 'border-purple-300');
             btn.classList.remove('bg-gray-100');
         } else {
             heartIcon.className = 'far fa-heart';
-            btn.classList.remove('bg-red-100', 'border', 'border-red-300');
+            btn.classList.remove('bg-purple-100', 'border', 'border-purple-300');
             btn.classList.add('bg-gray-100');
         }
     });
@@ -181,12 +181,12 @@ function displayBooks(books) {
 
 function createBookCard(book) {
     const card = document.createElement('div');
-    card.className = 'book-card bg-purple-300 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300';
+    card.className = 'book-card bg-purple-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300';
     
     const imageUrl = book.image || '../images/placeholder-book.jpg';
     
     card.innerHTML = `
-        <div class="book-image-placeholder h-48 bg-purple-300">
+        <div class="book-image-placeholder h-48 bg-purple-100">
             <img src="${imageUrl}" alt="${book.title} book cover" 
                  class="w-full h-full object-cover" 
                  onerror="this.src='../images/placeholder-book.jpg'">
@@ -246,7 +246,7 @@ function showNoResults() {
 function showError(message) {
     booksGrid.innerHTML = `
         <div class="col-span-full text-center py-12">
-            <div class="text-purple-500 text-lg mb-2">
+            <div class="text-purple-300 text-lg mb-2">
                 <i class="fas fa-exclamation-triangle"></i>
             </div>
             <p class="text-gray-600">${message}</p>
