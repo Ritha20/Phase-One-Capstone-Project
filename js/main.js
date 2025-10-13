@@ -85,7 +85,7 @@ function storeBookData(book) {
     localStorage.setItem('allBooksData', JSON.stringify(allBooksData));
 }
 
-// Mobile Menu Function (ADDED)
+// Mobile Menu Function
 function initializeMobileMenu() {
     if (mobileMenuButton && mobileMenu && menuIcon) {
         mobileMenuButton.addEventListener('click', function() {

@@ -46,7 +46,7 @@
        overflow: hidden;
       }
       
-      /* Mobile Menu Animation */
+       /* Mobile Animation  */
       #mobileMenu {
         transition: all 0.3s ease-in-out;
         max-height: 0;
@@ -70,7 +70,7 @@
         }
       }
     
-      /* Mobile category dropdown - SINGLE VERSION */
+      /* Mobile category dropdown */
       @media (max-width: 768px) {
         .category-dropdown {
           width: 100%;
@@ -114,7 +114,7 @@
       </button>
     </div>
 
-    <!-- Mobile Menu (hidden by default) -->
+    <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2 pb-2">
       <a href="index.html" class="block px-4 py-2 text-violet-900 rounded-lg hover:bg-purple-500 hover:text-white transition">Home</a>
       <a href="favorites.html" class="block px-4 py-2 text-violet-900 hover:bg-purple-500 hover:text-white rounded-lg transition">Favorites</a>
@@ -135,7 +135,7 @@
 <!-- Search Section -->
 <section class="container mx-auto px-4 py-8">
   <div class="max-w-2xl mx-auto">
-    <!-- Search Input and Button - Stack on mobile -->
+    <!-- Search Input and Button mobile -->
     <div class="flex flex-col sm:flex-row gap-4 mb-6">
       <input 
         type="text" 
@@ -151,7 +151,7 @@
       </button>
     </div>
 
-    <!-- Category Filter - Center on mobile -->
+    <!-- Category Filter on mobile -->
     <div class="flex flex-col sm:flex-row sm:items-center gap-4 justify-center sm:justify-start">
       <span class="text-purple-500 font-medium text-center sm:text-left">Filter by:</span>
       <div class="category-dropdown flex justify-center sm:justify-start">
@@ -190,7 +190,7 @@
 <!-- Books Grid -->
 <section class="container mx-auto px-4 py-8">
   <div id="booksGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    <!-- Books will be dynamically inserted here by JavaScript -->
+    
   </div>
   <div id="noResults" class="hidden text-center py-12">
     <p class="text-gray-600 text-xl">No books found. Try a different search term.</p>
