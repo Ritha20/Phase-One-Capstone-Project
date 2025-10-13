@@ -45,27 +45,87 @@
        -webkit-box-orient: vertical;
        overflow: hidden;
       }
-   </style>
+      
+      /* Mobile Menu Animation */
+      #mobileMenu {
+        transition: all 0.3s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+      }
+    
+      #mobileMenu.menu-open {
+        display: block;
+        max-height: 200px;
+        animation: slideDown 0.3s ease-in-out;
+      }
+    
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    
+      /* Mobile category dropdown - SINGLE VERSION */
+      @media (max-width: 768px) {
+        .category-dropdown {
+          width: 100%;
+          max-width: 280px;
+          margin: 0 auto;
+        }
+        
+        .category-menu {
+          position: fixed;
+          top: 50% ;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 90%;
+          max-width: 300px;
+          max-height: 70vh;
+          overflow-y: auto;
+          z-index: 1000;
+        }
+      }
+    </style>
 </head>
 <body class="bg-purple-100">
   <!-- Navigation -->
-  <nav class="bg-purple-300 shadow-md">
-    <div class="container mx-auto px-4 py-4">
-      <div class="flex items-center justify-between">
-        <h1 class="text-2xl font-bold font-serif">Book Explorer</h1>
-        <div class="flex gap-4">
-          <a href="index.html" class="px-4 py-2 text-violet-900 rounded-lg hover:bg-purple-500 hover:text-white transition">Home</a>
-          <a href="favorites.html" class="px-4 py-2 text-violet-900 hover:bg-purple-500 hover:text-white rounded-lg transition">Favorites</a>
-          <a href="about.html" class="px-4 py-2 text-violet-900 hover:bg-purple-500 hover:text-white rounded-lg transition">About</a>  
-        </div>
+<nav class="bg-purple-300 shadow-md">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <h1 class="text-2xl font-bold font-serif">Book Explorer</h1>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex gap-4">
+        <a href="index.html" class="px-4 py-2 text-violet-900 rounded-lg hover:bg-purple-500 hover:text-white transition">Home</a>
+        <a href="favorites.html" class="px-4 py-2 text-violet-900 hover:bg-purple-500 hover:text-white rounded-lg transition">Favorites</a>
+        <a href="about.html" class="px-4 py-2 text-violet-900 hover:bg-purple-500 hover:text-white rounded-lg transition">About</a>
       </div>
-    </div>
-</nav>
 
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuButton" class="md:hidden p-2 rounded-lg hover:bg-purple-400 transition">
+        <svg id="menuIcon" class="w-6 h-6 text-violet-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2 pb-2">
+      <a href="index.html" class="block px-4 py-2 text-violet-900 rounded-lg hover:bg-purple-500 hover:text-white transition">Home</a>
+      <a href="favorites.html" class="block px-4 py-2 text-violet-900 hover:bg-purple-500 hover:text-white rounded-lg transition">Favorites</a>
+      <a href="about.html" class="block px-4 py-2 text-violet-900 hover:bg-purple-500 hover:text-white rounded-lg transition">About</a>
+    </div>
+  </div>
+</nav>
 <!-- Hero Section -->
 <section class="bg-slate-900 text-white py-16">
   <div class="container mx-auto px-4 text-center">
-    <h2 class="text-2xl text-purple-100 font-mono italic mb-4">Find Stories That Stay With You</h2>
+    <h2 class="text-2xl text-purple-100 font-mono mb-4">Find Stories That Stay With You</h2>
     <p class="text-l mb-8 font-mono">Dive into a world of stories that inspire, educate, and entertain. Explore new 
       releases, timeless classics, and hidden gems — all in one place.</p>
 
@@ -75,7 +135,8 @@
 <!-- Search Section -->
 <section class="container mx-auto px-4 py-8">
   <div class="max-w-2xl mx-auto">
-    <div class="flex gap-4 mb-6">
+    <!-- Search Input and Button - Stack on mobile -->
+    <div class="flex flex-col sm:flex-row gap-4 mb-6">
       <input 
         type="text" 
         id="searchInput" 
@@ -84,17 +145,17 @@
       >
       <button 
         id="searchBtn" 
-        class="px-6 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-700 transition font-semibold"
+        class="px-6 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-700 transition font-semibold sm:w-auto w-full"
       >
         Search
       </button>
     </div>
 
-    <!-- category-dropdown -->
-    <div class="flex text-purple-300 items-center gap-4">
-      <span class="text-purple-500 font-medium">Filter by:</span>
-      <div class="category-dropdown">
-        <button class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition flex items-center gap-2">
+    <!-- Category Filter - Center on mobile -->
+    <div class="flex flex-col sm:flex-row sm:items-center gap-4 justify-center sm:justify-start">
+      <span class="text-purple-500 font-medium text-center sm:text-left">Filter by:</span>
+      <div class="category-dropdown flex justify-center sm:justify-start">
+        <button class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition flex items-center gap-2 w-full sm:w-auto justify-center">
           <span id="selectedCategory">All Categories</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>

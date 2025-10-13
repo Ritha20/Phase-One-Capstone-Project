@@ -5,21 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Explorer - About</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Mobile Menu Animation */
+#mobileMenu {
+  transition: all 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+#mobileMenu.menu-open {
+  display: block;
+  max-height: 200px;
+  animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Drop down on mobile  */
+@media (max-width: 768px) {
+  .category-dropdown {
+    position: static;
+  }
+  
+  .category-menu {
+    position: fixed;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 300px;
+  }
+}
+    </style>
 </head>
 <body class="bg-purple-100">
-    <!-- Navigation -->
-    <nav class="bg-purple-300 shadow-md">
-      <div class="container mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
-          <h1 class="text-2xl font-bold font-serif">Book Explorer</h1>
-          <div class="flex gap-4">
-            <a href="index.html" class="px-4 py-2 text-violet-900 hover:bg-purple-500 hover:text-white rounded-lg transition">Home</a>
-            <a href="/lab2/favorites.html" class="px-4 py-2 text-violet-900 hover:bg-purple-500 hover:text-white rounded-lg transition">Favorites</a>
-            <a href="about.html" class="px-4 py-2 text-violte-900 hover:bg-text-purple-500 rounded-lg hover:text-white transition">About</a>
-          </div>
-        </div>
+   <!-- Navigation -->
+<nav class="bg-purple-300 shadow-md">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <h1 class="text-2xl font-bold font-serif">Book Explorer</h1>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex gap-4">
+        <a href="index.html" class="px-4 py-2 text-violet-900 rounded-lg hover:bg-purple-500 hover:text-white transition">Home</a>
+        <a href="favorites.html" class="px-4 py-2 text-violet-900 hover:bg-purple-500 hover:text-white rounded-lg transition">Favorites</a>
+        <a href="about.html" class="px-4 py-2 text-violet-900 hover:bg-purple-500 hover:text-white rounded-lg transition">About</a>
       </div>
-    </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuButton" class="md:hidden p-2 rounded-lg hover:bg-purple-400 transition">
+        <svg id="menuIcon" class="w-6 h-6 text-violet-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2 pb-2">
+      <a href="index.html" class="block px-4 py-2 text-violet-900 rounded-lg hover:bg-purple-500 hover:text-white transition">Home</a>
+      <a href="favorites.html" class="block px-4 py-2 text-violet-900 hover:bg-purple-500 hover:text-white rounded-lg transition">Favorites</a>
+      <a href="about.html" class="block px-4 py-2 text-violet-900 hover:bg-purple-500 hover:text-white rounded-lg transition">About</a>
+    </div>
+  </div>
+</nav>
   
     <!-- About Section -->
     <section class="container mx-auto px-4 py-16">
