@@ -82,7 +82,7 @@ function createFavoriteBookCard(book) {
                 <span></span>
             </div>
             <div class="flex gap-2">
-                <a href="${readUrl}" target="_blank" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md text-sm font-medium transition-colors text-center">
+                <a href="${readUrl}" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md text-sm font-medium transition-colors text-center">
                     Start Reading
                 </a>
                 <button class="remove-favorite-btn bg-purple-100 hover:bg-purple-200 text-purple-600 p-2 rounded-md transition border border-purple-300" data-id="${book.id}">
